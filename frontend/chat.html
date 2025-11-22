@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Room</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Sidebar for Users -->
+        <div class="sidebar">
+            <div class="user-header">
+                <h3 id="currentUser">My Profile</h3>
+                <button id="logoutBtn">Logout</button>
+            </div>
+            <div id="userList" class="user-list">
+                <!-- Users load here -->
+            </div>
+        </div>
+
+        <!-- Main Chat Area -->
+        <div class="chat-area">
+            <div class="chat-header">
+                <h3 id="chatWithUser">Select a user to chat</h3>
+                <!-- Added Delete Chat Button -->
+                <button id="deleteChatBtn" style="display: none; background: #ff4757; width: auto; padding: 6px 15px; margin-left: auto; font-size: 0.8rem;">Delete Chat</button>
+            </div>
+            <div id="messages" class="messages">
+                <!-- Messages load here -->
+            </div>
+            <div class="chat-input">
+                <input type="text" id="msgInput" placeholder="Type a message...">
+                <button id="sendBtn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- We no longer need socket.js because we moved logic to app.js for easier variable sharing -->
+    <script src="js/app.js"></script>
+</body>
+</html>
